@@ -1,0 +1,2245 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/23/2023 11:16:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-RC6QJQ0"
+  DTS:CreatorName="DESKTOP-RC6QJQ0\Lenovo"
+  DTS:DTSID="{C2C22BCA-A5C8-47EA-9604-85706E64069E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="V7 transformation"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{A98BAC6F-C2B2-4A19-A528-A4EB9F557699}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ACE3BFC9-EE75-4C24-93F7-B71BF476B6F4}"
+      DTS:ObjectName="DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-RC6QJQ0\SQLSERVER_DEV;Initial Catalog=DP_Manh_2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{ACE3BFC9-EE75-4C24-93F7-B71BF476B6F4}DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_4]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F92C54B0-DDB6-4F49-91D7-DD3FCB1D8F3D}"
+      DTS:ObjectName="DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-RC6QJQ0\SQLSERVER_DEV;Initial Catalog=DP_Manh_4;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{F92C54B0-DDB6-4F49-91D7-DD3FCB1D8F3D}DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_4;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DP_Manh_4_Agent_Info"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3F66F760-917E-4A86-B0BE-E2E3F5C9130A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DP_Manh_4_Agent_Info"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DP_Manh_4_Agent_Info\Character Map"
+              componentClassID="Microsoft.CharacterMap"
+              contactInfo="Character Map;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Specifies the string operations to apply."
+              name="Character Map"
+              usesDispositions="true"
+              version="2">
+              <inputs>
+                <input
+                  refId="Package\DP_Manh_4_Agent_Info\Character Map.Inputs[Character Map Input]"
+                  name="Character Map Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Character Map.Inputs[Character Map Input].Columns[Agent_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="Agent_Name"
+                      errorOrTruncationOperation="Map Column"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.UInt32"
+                          name="MapFlags"
+                          typeConverter="LCMappingType">256</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\Character Map.Outputs[Character Map Output]"
+                  exclusionGroup="1"
+                  name="Character Map Output"
+                  synchronousInputId="Package\DP_Manh_4_Agent_Info\Character Map.Inputs[Character Map Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\Character Map.Outputs[Character Map Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Character Map Error Output"
+                  synchronousInputId="Package\DP_Manh_4_Agent_Info\Character Map.Inputs[Character Map Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Character Map.Outputs[Character Map Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Character Map.Outputs[Character Map Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Character Map.Outputs[Character Map Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Character Map.Outputs[Character Map Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DP_Manh_4_Agent_Info\Copy Column"
+              componentClassID="Microsoft.CopyMap"
+              contactInfo="Copy Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Copies input columns to new columns in the transformation output. For example, create a copy of the 'address' column so that it can be cleaned by subsequent transformations and leave the original column in place for auditing."
+              name="Copy Column">
+              <inputs>
+                <input
+                  refId="Package\DP_Manh_4_Agent_Info\Copy Column.Inputs[Copy Column Input]"
+                  name="Copy Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Copy Column.Inputs[Copy Column Input].Columns[Agent_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="Agent_Name"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\Copy Column.Outputs[Copy Column Output]"
+                  name="Copy Column Output"
+                  synchronousInputId="Package\DP_Manh_4_Agent_Info\Copy Column.Inputs[Copy Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Copy Column.Outputs[Copy Column Output].Columns[Copy of Agent_Name]"
+                      dataType="wstr"
+                      length="151"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Copy Column.Outputs[Copy Column Output].Columns[Copy of Agent_Name]"
+                      name="Copy of Agent_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the column to copy."
+                          name="copyColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DP_Manh_4_Agent_Info\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DP_Manh_4_Agent_Info\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Data Conversion.Inputs[Data Conversion Input].Columns[Area_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Area_Name"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Area_Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DP_Manh_4_Agent_Info\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Output].Columns[Conv_Area_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Output].Columns[Conv_Area_Name]"
+                      name="Conv_Area_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Area_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DP_Manh_4_Agent_Info\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DP_Manh_4_Agent_Info\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DP_Manh_4_Agent_Info\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Derived Column.Inputs[Derived Column Input].Columns[Agent_Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Agent_Number"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Number]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DP_Manh_4_Agent_Info\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEFT](#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Number]},5)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(Agent_Number,5)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DP_Manh_4_Agent_Info\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DP_Manh_2_dest"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DP_Manh_2_dest_Agent_Info]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_2]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Sales_Unit_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Sales_Unit_Code"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Sales_Unit_Code]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Sales_Unit_Code]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Agent_Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Agent_Number"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Agent_Number]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Number]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Agent_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="Agent_Name"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Agent_Name]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Name]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Grade]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Grade"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Grade]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Grade]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Agent_Status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Agent_Status"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Agent_Status]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Status]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Birthday]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Birthday"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Birthday]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Birthday]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[BirthPlace]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="BirthPlace"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[BirthPlace]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[BirthPlace]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[ID_Card]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="24"
+                      cachedName="ID_Card"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[ID_Card]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[ID_Card]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Terminated_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Terminated_date"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Terminated_date]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Terminated_date]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[License_No]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="License_No"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[License_No]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[License_No]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Hand_Phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="Hand_Phone"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Hand_Phone]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Hand_Phone]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Date_Appointed]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date_Appointed"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Date_Appointed]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Date_Appointed]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Sales_Unit]"
+                      cachedDataType="wstr"
+                      cachedLength="90"
+                      cachedName="Sales_Unit"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Area_Name]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Sales_Unit]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Conv_Area_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Conv_Area_Name"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Sales_Unit]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Conv_Area_Name]" />
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Derived Column 1"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Agent_Name_Short]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Derived Column 1]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Area_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Area_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Sales_Unit]"
+                      dataType="wstr"
+                      length="90"
+                      name="Sales_Unit" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Sales_Unit_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Sales_Unit_Code" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Agent_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Agent_Number" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Agent_Name]"
+                      dataType="wstr"
+                      length="151"
+                      name="Agent_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Grade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Grade" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Agent_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Agent_Status" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Birthday]"
+                      dataType="dbTimeStamp"
+                      name="Birthday" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[BirthPlace]"
+                      dataType="wstr"
+                      length="40"
+                      name="BirthPlace" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[ID_Card]"
+                      codePage="1252"
+                      dataType="str"
+                      length="24"
+                      name="ID_Card" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Terminated_date]"
+                      dataType="dbTimeStamp"
+                      name="Terminated_date" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[License_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="License_No" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Hand_Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="Hand_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Date_Appointed]"
+                      dataType="dbTimeStamp"
+                      name="Date_Appointed" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input].ExternalColumns[Agent_Name_Short]"
+                      dataType="wstr"
+                      length="151"
+                      name="Agent_Name_Short" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DP_Manh_4_agent_info"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_Main_AGENT_INFO_DA_CUTOFF]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_4]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RC6QJQ0\SQLSERVER_DEV.DP_Manh_4]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Area_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Area_Name]"
+                      length="3"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Area_Name]"
+                      name="Area_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Sales_Unit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Sales_Unit]"
+                      length="90"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Sales_Unit]"
+                      name="Sales_Unit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Sales_Unit_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Sales_Unit_Code]"
+                      length="5"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Sales_Unit_Code]"
+                      name="Sales_Unit_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent_Number]"
+                      length="8"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Number]"
+                      name="Agent_Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent_Name]"
+                      length="151"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Name]"
+                      name="Agent_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="6"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Grade]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Grade]"
+                      length="2"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Grade]"
+                      name="Grade"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent_Status]"
+                      length="10"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Status]"
+                      name="Agent_Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Birthday]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Birthday]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Birthday]"
+                      name="Birthday"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[BirthPlace]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[BirthPlace]"
+                      length="40"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[BirthPlace]"
+                      name="BirthPlace"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[ID_Card]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[ID_Card]"
+                      length="24"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[ID_Card]"
+                      name="ID_Card"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Terminated_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Terminated_date]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Terminated_date]"
+                      name="Terminated_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[License_No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[License_No]"
+                      length="15"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[License_No]"
+                      name="License_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Hand_Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Hand_Phone]"
+                      length="16"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Hand_Phone]"
+                      name="Hand_Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Date_Appointed]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Date_Appointed]"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Date_Appointed]"
+                      name="Date_Appointed"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Area_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Area_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Sales_Unit]"
+                      dataType="wstr"
+                      length="90"
+                      name="Sales_Unit" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Sales_Unit_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Sales_Unit_Code" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Parent_Supervisor_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Parent_Supervisor_Code" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Parent_Supervisor_Name]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Parent_Supervisor_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Supervisor_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Supervisor_Code" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Supervisor_Name]"
+                      dataType="wstr"
+                      length="4000"
+                      name="Supervisor_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Agent_Number" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent_Name]"
+                      dataType="wstr"
+                      length="151"
+                      name="Agent_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Grade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Grade" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Club_Class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Club_Class" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Agent_Status" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Birthday]"
+                      dataType="dbTimeStamp"
+                      name="Birthday" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[BirthPlace]"
+                      dataType="wstr"
+                      length="40"
+                      name="BirthPlace" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[ID_Card]"
+                      codePage="1252"
+                      dataType="str"
+                      length="24"
+                      name="ID_Card" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Issued Date]"
+                      dataType="dbTimeStamp"
+                      name="Issued Date" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Issued Place]"
+                      dataType="wstr"
+                      length="80"
+                      name="Issued Place" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Marriage]"
+                      dataType="wstr"
+                      length="90"
+                      name="Marriage" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      dataType="numeric"
+                      name="Age"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Client_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Client_Code" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Client_Name]"
+                      dataType="wstr"
+                      length="151"
+                      name="Client_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="151"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Telephone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="Telephone" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Hand_Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="Hand_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Contact Address]"
+                      dataType="wstr"
+                      length="90"
+                      name="Contact Address" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Contact2]"
+                      dataType="wstr"
+                      length="90"
+                      name="Contact2" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Contact3]"
+                      dataType="wstr"
+                      length="90"
+                      name="Contact3" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Contact4]"
+                      dataType="wstr"
+                      length="90"
+                      name="Contact4" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Contact5]"
+                      dataType="wstr"
+                      length="90"
+                      name="Contact5" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Alternate_Address]"
+                      dataType="wstr"
+                      length="90"
+                      name="Alternate_Address" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Alternate2]"
+                      dataType="wstr"
+                      length="90"
+                      name="Alternate2" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Alternate3]"
+                      dataType="wstr"
+                      length="90"
+                      name="Alternate3" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Alternate4]"
+                      dataType="wstr"
+                      length="90"
+                      name="Alternate4" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Alternate5]"
+                      dataType="wstr"
+                      length="90"
+                      name="Alternate5" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Date_Appointed]"
+                      dataType="dbTimeStamp"
+                      name="Date_Appointed" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Terminated_date]"
+                      dataType="dbTimeStamp"
+                      name="Terminated_date" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Reason Terminated]"
+                      dataType="wstr"
+                      length="90"
+                      name="Reason Terminated" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Recovered Date]"
+                      dataType="dbTimeStamp"
+                      name="Recovered Date" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Client Number of Introducer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Client Number of Introducer" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Client Name of Introducer]"
+                      dataType="wstr"
+                      length="151"
+                      name="Client Name of Introducer" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Client ID number of Introducer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="24"
+                      name="Client ID number of Introducer" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent Numer of Introducer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Agent Numer of Introducer" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent_Bank_Account]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Agent_Bank_Account" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Bank_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Bank_Code" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Bank Name]"
+                      dataType="wstr"
+                      length="235"
+                      name="Bank Name" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Bank_Address]"
+                      dataType="wstr"
+                      length="90"
+                      name="Bank_Address" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Bank_Address2]"
+                      dataType="wstr"
+                      length="90"
+                      name="Bank_Address2" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Bank_Address3]"
+                      dataType="wstr"
+                      length="90"
+                      name="Bank_Address3" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Bank_Address4]"
+                      dataType="wstr"
+                      length="90"
+                      name="Bank_Address4" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[License_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="License_No" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Tax Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Tax Code" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Tax Office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Tax Office" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Previous Insurance]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Previous Insurance" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Experience in the insurance]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Experience in the insurance" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Agent Classification]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Agent Classification" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Promote_Date]"
+                      dataType="dbTimeStamp"
+                      name="Promote_Date" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Demote_Date]"
+                      dataType="dbTimeStamp"
+                      name="Demote_Date" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Effective_Date_Club_Class]"
+                      dataType="dbTimeStamp"
+                      name="Effective_Date_Club_Class" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Bank_Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Bank_Number" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Leader]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Leader" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[SFC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SFC" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Leader_count]"
+                      dataType="i4"
+                      name="Leader_count" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[Appointed_TAPSU]"
+                      dataType="dbTimeStamp"
+                      name="Appointed_TAPSU" />
+                    <externalMetadataColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].ExternalColumns[CUTOFF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="CUTOFF" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Area_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Area_Name]"
+                      name="Area_Name" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Sales_Unit]"
+                      dataType="wstr"
+                      length="90"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Sales_Unit]"
+                      name="Sales_Unit" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Sales_Unit_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Sales_Unit_Code]"
+                      name="Sales_Unit_Code" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Agent_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Agent_Number]"
+                      name="Agent_Number" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Agent_Name]"
+                      dataType="wstr"
+                      length="151"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Agent_Name]"
+                      name="Agent_Name" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Grade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Grade]"
+                      name="Grade" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Agent_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Agent_Status]"
+                      name="Agent_Status" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Birthday]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Birthday]"
+                      name="Birthday" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[BirthPlace]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[BirthPlace]"
+                      name="BirthPlace" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[ID_Card]"
+                      codePage="1252"
+                      dataType="str"
+                      length="24"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[ID_Card]"
+                      name="ID_Card" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Terminated_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Terminated_date]"
+                      name="Terminated_date" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[License_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[License_No]"
+                      name="License_No" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Hand_Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Hand_Phone]"
+                      name="Hand_Phone" />
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Date_Appointed]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Error Output].Columns[Date_Appointed]"
+                      name="Date_Appointed" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DP_Manh_4_Agent_Info\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Area_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Area_Name"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Area_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Sales_Unit]"
+                      cachedDataType="wstr"
+                      cachedLength="90"
+                      cachedName="Sales_Unit"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Sales_Unit]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Sales_Unit_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Sales_Unit_Code"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Sales_Unit_Code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Agent_Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Agent_Number"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Number]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Agent_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="Agent_Name"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="Gender"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Gender]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Grade]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Grade"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Grade]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Agent_Status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Agent_Status"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Status]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Birthday]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Birthday"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Birthday]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[BirthPlace]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="BirthPlace"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[BirthPlace]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[ID_Card]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="24"
+                      cachedName="ID_Card"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[ID_Card]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Terminated_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Terminated_date"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Terminated_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[License_No]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="License_No"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[License_No]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Hand_Phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="Hand_Phone"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Hand_Phone]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Date_Appointed]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date_Appointed"
+                      lineageId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Date_Appointed]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Conv_Area_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Conv_Area_Name"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Output].Columns[Conv_Area_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Derived Column 1"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input].Columns[Copy of Agent_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="Copy of Agent_Name"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Copy Column.Outputs[Copy Column Output].Columns[Copy of Agent_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Area_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Area_Name]"
+                      name="Area_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Area_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Sales_Unit]"
+                      dataType="wstr"
+                      length="90"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Sales_Unit]"
+                      name="Sales_Unit">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Sales_Unit]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Sales_Unit_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Sales_Unit_Code]"
+                      name="Sales_Unit_Code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Sales_Unit_Code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Number]"
+                      name="Agent_Number"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Number]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Name]"
+                      dataType="wstr"
+                      length="151"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Name]"
+                      name="Agent_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Grade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Grade]"
+                      name="Grade">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Grade]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Agent_Status]"
+                      name="Agent_Status">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Agent_Status]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Birthday]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Birthday]"
+                      name="Birthday">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Birthday]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[BirthPlace]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[BirthPlace]"
+                      name="BirthPlace">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[BirthPlace]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[ID_Card]"
+                      codePage="1252"
+                      dataType="str"
+                      length="24"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[ID_Card]"
+                      name="ID_Card">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[ID_Card]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Terminated_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Terminated_date]"
+                      name="Terminated_date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Terminated_date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[License_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[License_No]"
+                      name="License_No">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[License_No]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Hand_Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Hand_Phone]"
+                      name="Hand_Phone">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Hand_Phone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Date_Appointed]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Date_Appointed]"
+                      name="Date_Appointed">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output].Columns[Date_Appointed]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Conv_Area_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Conv_Area_Name]"
+                      name="Conv_Area_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Output].Columns[Conv_Area_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Derived Column 1]"
+                      name="Derived Column 1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Copy of Agent_Name]"
+                      dataType="wstr"
+                      length="151"
+                      lineageId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output].Columns[Copy of Agent_Name]"
+                      name="Copy of Agent_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DP_Manh_4_Agent_Info\Copy Column.Outputs[Copy Column Output].Columns[Copy of Agent_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DP_Manh_4_Agent_Info.Paths[Character Map Output]"
+              endId="Package\DP_Manh_4_Agent_Info\Sort.Inputs[Sort Input]"
+              name="Character Map Output"
+              startId="Package\DP_Manh_4_Agent_Info\Character Map.Outputs[Character Map Output]" />
+            <path
+              refId="Package\DP_Manh_4_Agent_Info.Paths[Copy Column Output]"
+              endId="Package\DP_Manh_4_Agent_Info\Character Map.Inputs[Character Map Input]"
+              name="Copy Column Output"
+              startId="Package\DP_Manh_4_Agent_Info\Copy Column.Outputs[Copy Column Output]" />
+            <path
+              refId="Package\DP_Manh_4_Agent_Info.Paths[Data Conversion Output]"
+              endId="Package\DP_Manh_4_Agent_Info\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DP_Manh_4_Agent_Info\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DP_Manh_4_Agent_Info.Paths[Derived Column Output]"
+              endId="Package\DP_Manh_4_Agent_Info\Copy Column.Inputs[Copy Column Input]"
+              name="Derived Column Output"
+              startId="Package\DP_Manh_4_Agent_Info\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DP_Manh_4_Agent_Info.Paths[OLE DB Source Output]"
+              endId="Package\DP_Manh_4_Agent_Info\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DP_Manh_4_Agent_Info.Paths[Sort Output]"
+              endId="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\DP_Manh_4_Agent_Info\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EB3F4D8C-55BD-489E-8C5F-76391180C16C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{ACE3BFC9-EE75-4C24-93F7-B71BF476B6F4}"
+          SQLTask:SqlStatementSource="DELETE FROM [DP_Manh_2].[dbo].[DP_Manh_2_dest_Agent_Info]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{874F4843-C1A7-411F-A34B-824BE7BE0481}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DP_Manh_4_Agent_Info" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="199,42"
+          Id="Package\DP_Manh_4_Agent_Info"
+          TopLeft="155.5,170.5" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="169,75" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="254.5,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.5"
+              Start="0,0"
+              End="0,46">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DP_Manh_4_Agent_Info">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DP_Manh_4_Agent_Info\Data Conversion"
+          TopLeft="155.5,137.5" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\DP_Manh_4_Agent_Info\Copy Column"
+          TopLeft="165,284" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DP_Manh_4_Agent_Info\Derived Column"
+          TopLeft="156,220" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\DP_Manh_4_Agent_Info\Sort"
+          TopLeft="182,456" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest"
+          TopLeft="150.5,544.5" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DP_Manh_4_Agent_Info\Character Map"
+          TopLeft="155,365" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info"
+          TopLeft="137.5,54.5" />
+        <EdgeLayout
+          Id="Package\DP_Manh_4_Agent_Info.Paths[Sort Output]"
+          TopLeft="232.75,498">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.5"
+              Start="0,0"
+              End="0,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DP_Manh_4_Agent_Info.Paths[OLE DB Source Output]"
+          TopLeft="236.25,96.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DP_Manh_4_Agent_Info.Paths[Derived Column Output]"
+          TopLeft="156,241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,64"
+              Start="0,0"
+              End="1.5,64">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,60"
+                    Point2="-22.5,64"
+                    Point3="-18.5,64" />
+                  <mssgle:LineSegment
+                    End="1.5,64" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DP_Manh_4_Agent_Info.Paths[Data Conversion Output]"
+          TopLeft="235.5,179.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.5"
+              Start="0,0"
+              End="0,33">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DP_Manh_4_Agent_Info.Paths[Copy Column Output]"
+          TopLeft="234.5,326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DP_Manh_4_Agent_Info.Paths[Character Map Output]"
+          TopLeft="231.25,407">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DP_Manh_4_Agent_Info\DP_Manh_2_dest">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DP_Manh_4_Agent_Info\DP_Manh_4_agent_info">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
